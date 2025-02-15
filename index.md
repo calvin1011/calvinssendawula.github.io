@@ -5,7 +5,8 @@ layout: default
 
 # Welcome to My Portfolio 🚀
 Hi, I'm **Calvin Ssendawula**!  
-I am a Software Engineer passionate about AI, Web Development, and Finance.
+
+I'm <span id="typing-text"></span>
 
 ---
 

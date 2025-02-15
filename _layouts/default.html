@@ -28,5 +28,41 @@
     <p>THE SKY IS THE LIMIT</p>
 </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const textElement = document.getElementById("typing-text");
+        const words = ["a Full Stack Developer", "an AI Enthusiast", "a Software Engineer", "a Problem Solver"];
+        let wordIndex = 0;
+        let letterIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            let currentWord = words[wordIndex];
+            if (isDeleting) {
+                textElement.innerHTML = currentWord.substring(0, letterIndex - 1);
+                letterIndex--;
+            } else {
+                textElement.innerHTML = currentWord.substring(0, letterIndex + 1);
+                letterIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && letterIndex === currentWord.length) {
+                typingSpeed = 1000; // Pause before deleting
+                isDeleting = true;
+            } else if (isDeleting && letterIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typingSpeed = 500; // Pause before typing the next word
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        typeEffect();
+    });
+</script>
+
 </body>
 </html>
