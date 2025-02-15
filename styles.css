@@ -6,7 +6,7 @@ body {
     color: #33ff33;
 }
 
-/* ===== HEADER - Move "Portfolio" to the Left ===== */
+/* ===== HEADER - Move "Portfolio" to the Left & Nav to the Right ===== */
 header {
     background-color: black;
     color: #33ff33;
@@ -16,21 +16,23 @@ header {
     padding: 20px 30px;
 }
 
-/* Make Portfolio text larger and bold */
+/* "Portfolio" text styling */
 header h1 {
     margin: 0;
     font-size: 28px;
     font-weight: bold;
 }
 
-/* ===== NAVIGATION BAR - Add Spacing ===== */
+/* ===== NAVIGATION BAR - Move Tabs to the Right ===== */
 nav {
     background-color: #222;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 30px; /* Add spacing below navigation */
+    display: flex;
+    justify-content: flex-end; /* Align tabs to the right */
+    /* Add spacing from the right */
+    padding: 15px 50px 15px 15px;
 }
 
+/* Navigation Links */
 nav a {
     color: #33ff33;
     text-decoration: none;
@@ -45,11 +47,11 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* ===== SECTION SPACING ===== */
+/* ===== SECTION SPACING - Add More Space Between Elements ===== */
 section {
-    padding: 50px 20px; /* Add more padding inside each section */
-    margin: 30px auto; /* Add spacing between sections */
-    max-width: 800px; /* Prevents content from stretching too wide */
+    padding: 50px 20px; /* More padding inside each section */
+    margin: 40px auto; /* More spacing between sections */
+    max-width: 800px; /* Keeps content centered */
     text-align: center;
 }
 
@@ -64,7 +66,7 @@ section {
     overflow: hidden;
     display: inline-block;
     animation: blink 0.8s infinite;
-    margin-top: 30px; /* Add space above the typing effect */
+    margin-top: 40px; /* Add more space above typing effect */
 }
 
 /* Cursor Blinking Animation */
@@ -76,7 +78,7 @@ section {
 .project-card {
     border: 1px solid #33ff33;
     padding: 25px;
-    margin: 25px 0; /* Increase spacing between project cards */
+    margin: 30px 0; /* More spacing between project cards */
     border-radius: 5px;
     text-align: left;
 }
@@ -87,5 +89,5 @@ footer {
     color: #33ff33;
     padding: 20px;
     text-align: center;
-    margin-top: 50px; /* Add space before the footer */
+    margin-top: 60px; /* Add more space before the footer */
 }
