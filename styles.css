@@ -57,17 +57,17 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    padding: 50px;
-    max-width: 900px;
+    gap: 60px;
+    padding: 60px;
+    max-width: 1000px;
     margin: auto;
 }
 
 /* Profile Image on Left */
 .about-image img {
-    width: 200px;  /* Adjust image size */
+    width: 280px;  /* Adjust image size */
     height: auto;
-    border-radius: 10px; /* Optional: Rounded edges */
+    border-radius: 15px; /* Optional: Rounded edges */
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
 }
 
@@ -75,24 +75,27 @@ section {
 .about-text {
     flex: 1;
     text-align: left;
+    font-size: 20px;
+    line-height: 1.7;
 }
 
 /* About Me Heading */
 .about-text h2 {
     color: #33ff33; /* Green text */
-    font-size: 28px;
+    font-size: 33px;
 }
 
 /* Connect Button */
 .connect-button {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .connect-button a {
     background-color: #33ff33;
     color: black;
-    padding: 12px 20px;
+    padding: 14px 23px;
+    font-size: 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
