@@ -4,7 +4,8 @@ layout: default
 ---
 
 # Welcome to My Portfolio 🚀
-Hi, I'm **Calvin Ssendawula**!  
+Hi, My name is
+**Calvin Ssendawula**!  
 
 <span id="typing-text"></span>
 
