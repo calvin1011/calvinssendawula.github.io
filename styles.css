@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 50px;
+}
+
+section {
+    padding: 20px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
