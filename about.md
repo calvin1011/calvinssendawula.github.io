@@ -19,9 +19,11 @@ layout: default
         </p>
 
         <p>
-            I started coding my junior year of high school when I learned a basic HTML class and fell in love with the art of creating. 
-            I wanted this journey to be more than just a basic HTML class, so I chose Computer Science as my career path. 
-            I have a strong passion for programming and becoming a better engineer.
+            I discovered my passion for coding during my junior year of high school when I took a basic HTML class. 
+            The ability to bring ideas to life through code instantly captivated me. However, I wanted to go beyond the fundamentals 
+            and deepen my understanding of software development. That drive led me to pursue a degree in Computer Science, where I 
+            continue to refine my skills and grow as an engineer. I am deeply passionate about programming and constantly strive to 
+            become a better developer.
         </p>
 
         <p>
