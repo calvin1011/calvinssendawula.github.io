@@ -2,68 +2,90 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
     background-color: #0f0f0f;
     color: #33ff33;
 }
 
+/* ===== HEADER - Move "Portfolio" to the Left ===== */
 header {
     background-color: black;
     color: #33ff33;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
 }
 
+/* Make Portfolio text larger and bold */
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ===== NAVIGATION BAR - Add Spacing ===== */
 nav {
     background-color: #222;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
+    margin-bottom: 30px; /* Add spacing below navigation */
 }
 
 nav a {
     color: #33ff33;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 25px; /* Space out links */
     font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease-in-out;
 }
 
 nav a:hover {
     background-color: #444;
+    border-radius: 5px;
 }
 
+/* ===== SECTION SPACING ===== */
 section {
-    padding: 20px;
+    padding: 50px 20px; /* Add more padding inside each section */
+    margin: 30px auto; /* Add spacing between sections */
+    max-width: 800px; /* Prevents content from stretching too wide */
+    text-align: center;
 }
 
-.project-card {
-    border: 1px solid #33ff33;
-    padding: 15px;
-    margin: 10px;
-}
-
-footer {
-    background-color: #222;
-    color: #33ff33;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* ===== Typing Effect Styles ===== */
+/* ===== TYPING EFFECT STYLES ===== */
 #typing-text {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: #33ff33;
     border-right: 2px solid #33ff33;
-    padding-right: 5px;
+    padding-right: 8px;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
     animation: blink 0.8s infinite;
+    margin-top: 30px; /* Add space above the typing effect */
 }
 
 /* Cursor Blinking Animation */
 @keyframes blink {
     50% { border-color: transparent; }
+}
+
+/* ===== PROJECT CARD - Add Spacing ===== */
+.project-card {
+    border: 1px solid #33ff33;
+    padding: 25px;
+    margin: 25px 0; /* Increase spacing between project cards */
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* ===== FOOTER - Add Space at the Bottom ===== */
+footer {
+    background-color: #222;
+    color: #33ff33;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* Add space before the footer */
 }
