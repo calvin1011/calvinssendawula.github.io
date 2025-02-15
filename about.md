@@ -4,7 +4,7 @@ layout: default
 ---
 
 # About Me 👨‍💻
-Hi, I'm **[Your Name]**.  
+Hi, I'm **[Calvin Ssendawula]**.  
 I'm a Computer Science student at Adams State University, passionate about AI, Web Development, and Finance.
 
 ---

@@ -6,7 +6,7 @@ layout: default
 # Welcome to My Portfolio 🚀
 Hi, I'm **Calvin Ssendawula**!  
 
-I'm <span id="typing-text"></span>
+<span id="typing-text"></span>
 
 ---
 
