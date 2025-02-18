@@ -33,19 +33,6 @@ layout: default
         <p><strong>Description:</strong> I build computer images using terminal commands and configure BIOS settings for secure boot systems. I deploy computers for faculty members while streamlining IT support operations to minimize daily support tickets.</p>
     </div>
 
-    <!-- STEM Mentor -->
-    <div class="experience-card" onclick="openExperience('stem-mentor')">
-        <h2>Adams State University</h2>
-        <p>STEM Mentor</p>
-    </div>
-    <div id="stem-mentor" class="experience-popup">
-        <span class="close-btn" onclick="closeExperience('stem-mentor')">&times;</span>
-        <h2>Adams State University</h2>
-        <p><strong>Duration:</strong> Aug 2021 - Present</p>
-        <p><strong>Role:</strong> STEM Mentor</p>
-        <p><strong>Description:</strong> I support students academically and provide mentorship to help them navigate STEM fields. Four of my mentees have taken on leadership roles in diverse majors.</p>
-    </div>
-
     <!-- Supplemental Instructor CS -->
     <div class="experience-card" onclick="openExperience('supplemental-instructor')">
         <h2>Adams State University</h2>
