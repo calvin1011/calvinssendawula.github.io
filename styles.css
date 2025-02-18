@@ -108,6 +108,124 @@ section {
     background-color: #28cc28;
 }
 
+/* ===== PROJECTS SECTION ===== */
+.projects-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.projects-subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+/* Technology Filter Buttons */
+.tech-filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tech-filters button {
+    background-color: black;
+    color: red;
+    border: 2px solid red;
+    padding: 8px 14px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tech-filters button:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Scrollable Projects Section */
+.projects-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none; /* Hide scrollbar for IE */
+}
+
+/* Hide scrollbar */
+.projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Project Cards */
+.project-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 320px;
+    max-width: 350px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card h2 {
+    color: red;
+    font-size: 22px;
+}
+
+.project-card p {
+    color: white;
+    font-size: 16px;
+}
+
+/* Tech Stack Tags */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.tech-stack span {
+    background-color: gray;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+/* View All Projects Button */
+.projects-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-all-button {
+    background-color: red;
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.3s ease-in-out;
+}
+
+.view-all-button:hover {
+    background-color: darkred;
+}
+
 /* ===== COMMUNITY INVOLVEMENT SECTION ===== */
 .community-title {
     text-align: center;
