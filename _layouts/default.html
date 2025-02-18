@@ -10,15 +10,19 @@
 
 <header>
     <h1>Portfolio.</h1>
-</header>
 
-<nav>
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <a href="{{ '/about' | relative_url }}">About Me</a>
-    <a href="{{ '/experience' | relative_url }}">Experience</a>
-    <a href="{{ '/community' | relative_url }}">Community</a>
-    <a href="{{ '/projects' | relative_url }}">Projects</a>
-</nav>
+    <!-- Mobile Menu Toggle (☰) -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about' | relative_url }}">About Me</a>
+        <a href="{{ '/experience' | relative_url }}">Experience</a>
+        <a href="{{ '/community' | relative_url }}">Community</a>
+        <a href="{{ '/projects' | relative_url }}">Projects</a>
+    </nav>
+</header>
 
 <section>
     {{ content }}
@@ -28,13 +32,13 @@
     <p>THE SKY IS THE LIMIT</p>
 </footer>
 
-<!-- Typing Effect -->
+<!-- 🚀 Typing Effect Script -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const textElement = document.getElementById("typing-text");
         if (!textElement) return; // Prevents errors if element is missing
 
-        const words = ["I'm a Full Stack Developer", "I'm an AI Enthusiast", "I'm an Open-Source contributor",
+        const words = ["I'm a Full Stack Developer", "I'm an AI Enthusiast", "I'm an Open-Source Contributor",
             "I'm a Software Engineer", "I'm a Car Enthusiast", "I love swimming", "I'm a Watch Enthusiast"];
         let wordIndex = 0;
         let letterIndex = 0;
@@ -68,7 +72,7 @@
     });
 </script>
 
-<!-- JavaScript for Experience Popups -->
+<!-- 🚀 JavaScript for Experience Popups -->
 <script>
     function openExperience(id) {
         document.getElementById(id).style.display = "block";
@@ -76,6 +80,14 @@
 
     function closeExperience(id) {
         document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<!-- 🚀 Mobile Menu Toggle -->
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("nav-active");
     }
 </script>
 
