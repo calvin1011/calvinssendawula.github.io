@@ -1,3 +1,4 @@
+/* ===== GENERAL STYLES ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -48,7 +49,7 @@ nav a:hover {
 section {
     padding: 50px 20px;
     margin: 40px auto;
-    max-width: 800px;
+    max-width: 900px;
     text-align: center;
 }
 
@@ -65,9 +66,9 @@ section {
 
 /* Profile Image on Left */
 .about-image img {
-    width: 280px;  /* Adjust image size */
+    width: 320px;  /* Adjusted image size */
     height: auto;
-    border-radius: 15px; /* Optional: Rounded edges */
+    border-radius: 15px;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
 }
 
@@ -75,14 +76,14 @@ section {
 .about-text {
     flex: 1;
     text-align: left;
-    font-size: 20px;
-    line-height: 1.7;
+    font-size: 22px;
+    line-height: 1.8;
 }
 
 /* About Me Heading */
 .about-text h2 {
-    color: #33ff33; /* Green text */
-    font-size: 33px;
+    color: #33ff33;
+    font-size: 35px;
 }
 
 /* Connect Button */
@@ -94,22 +95,97 @@ section {
 .connect-button a {
     background-color: #33ff33;
     color: black;
-    padding: 14px 23px;
-    font-size: 20px;
+    padding: 16px 28px;
+    font-size: 22px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     display: inline-block;
     transition: background 0.3s ease-in-out;
 }
 
 .connect-button a:hover {
-    background-color: #28cc28; /* Darker green on hover */
+    background-color: #28cc28;
+}
+
+/* ===== EXPERIENCE SECTION ===== */
+.experience-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.experience-subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #bbb;
+}
+
+/* Grid Layout */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Square Experience Cards */
+.experience-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.experience-card h2 {
+    color: red;
+    font-size: 22px;
+}
+
+.experience-card p {
+    color: white;
+    font-size: 16px;
+}
+
+.experience-card:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+/* Popup Styling */
+.experience-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    text-align: left;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* ===== TYPING EFFECT STYLES ===== */
 #typing-text {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: #33ff33;
     border-right: 2px solid #33ff33;
@@ -118,7 +194,7 @@ section {
     overflow: hidden;
     display: inline-block;
     animation: blink 0.8s infinite;
-    margin-top: 40px; /* Add space above typing effect */
+    margin-top: 40px;
 }
 
 /* Cursor Blinking Animation */
@@ -129,9 +205,9 @@ section {
 /* ===== PROJECT CARD - Add Spacing ===== */
 .project-card {
     border: 1px solid #33ff33;
-    padding: 25px;
+    padding: 30px;
     margin: 30px 0;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: left;
 }
 

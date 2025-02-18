@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
-
 </head>
 <body>
 
@@ -29,9 +28,12 @@
     <p>THE SKY IS THE LIMIT</p>
 </footer>
 
+<!-- Typing Effect -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const textElement = document.getElementById("typing-text");
+        if (!textElement) return; // Prevents errors if element is missing
+
         const words = ["I'm a Full Stack Developer", "I'm an AI Enthusiast", "I'm an Open-Source contributor",
             "I'm a Software Engineer", "I'm a Car Enthusiast", "I love swimming", "I'm a Watch Enthusiast"];
         let wordIndex = 0;
@@ -64,6 +66,17 @@
 
         typeEffect();
     });
+</script>
+
+<!-- JavaScript for Experience Popups -->
+<script>
+    function openExperience(id) {
+        document.getElementById(id).style.display = "block";
+    }
+
+    function closeExperience(id) {
+        document.getElementById(id).style.display = "none";
+    }
 </script>
 
 </body>
