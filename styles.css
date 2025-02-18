@@ -18,7 +18,7 @@ body {
 /* ===== NAVIGATION MENU ===== */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Keeps navigation centered */
     align-items: center;
     padding: 15px 20px;
     background-color: #222;
@@ -32,14 +32,16 @@ nav {
 /* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 25px; /* Adjust spacing */
+    flex-wrap: wrap;
 }
 
 .nav-links a {
     color: #33ff33;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 12px;
+    white-space: nowrap; /* Prevents wrapping */
 }
 
 .nav-links a:hover {
@@ -67,16 +69,16 @@ section {
 .about-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 60px;
-    padding: 60px;
-    max-width: 1000px;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    max-width: 900px;
     margin: auto;
 }
 
 /* Profile Image */
 .about-image img {
-    width: 320px;
+    width: 280px;
     height: auto;
     border-radius: 15px;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
@@ -114,10 +116,9 @@ section {
 /* ===== EXPERIENCE SECTION ===== */
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* More even box sizes */
     gap: 20px;
-    justify-content: center;
-    max-width: 1000px;
+    max-width: 900px; /* Prevents overly stretched layout */
     margin: auto;
 }
 
@@ -140,7 +141,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
 }
 
