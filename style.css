@@ -116,6 +116,36 @@ nav ul li a:hover::after{
     font-weight: 600;
     color: #fff;
 }
+
+/* Common button styling */
+.button {
+    display: inline-block;
+    background: #ff004f;
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    text-align: center;
+}
+
+.button:hover {
+    background: darkred;
+}
+
+/* Specific to the "Let's Connect" button */
+.connect-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.connect-button a {
+    display: inline-block;
+    width: fit-content;
+}
+
 /* ===== EXPERIENCE SECTION ===== */
 #experience {
     padding: 50px 0;
