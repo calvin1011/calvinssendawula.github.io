@@ -319,46 +319,107 @@ nav {
 }
 
 /* ===== PROJECTS SECTION ===== */
-#projects{
+#projects {
     padding: 50px 0;
+    text-align: center;
 }
-.projects-container{
+
+.projects-subtext {
+    font-size: 14px;
+    color: #bbb;
+    font-style: italic;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Skill Filter Buttons */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.filter-btn {
+    background: transparent;
+    border: 2px solid #ff004f;
+    color: #ff004f;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.filter-btn:hover {
+    background: #ff004f;
+    color: white;
+}
+
+/* Project Card */
+.projects-container {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 20px;
-    scrollbar-width: none;
 }
-.projects-container::-webkit-scrollbar{
-    display: none;
-}
-.project-card{
+.project-card {
     background: #222;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    min-width: 320px;
     max-width: 350px;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
 }
-.project-card:hover{
+.project-card:hover {
     transform: scale(1.05);
     background: #333;
 }
+.project-title {
+    color: #ff004f;
+    font-size: 20px;
+    font-weight: bold;
+}
+.project-tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+.tag {
+    background: #444;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.project-link {
+    display: block;
+    margin-top: 15px;
+    color: #ff004f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.project-link:hover {
+    text-decoration: underline;
+}
 
 /* View All Projects Button */
-.view-all-button{
-    background: red;
+.projects-footer {
+    margin-top: 30px;
+}
+.view-all-button {
+    background: #ff004f;
     color: white;
     padding: 14px 28px;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
     transition: background 0.3s ease-in-out;
 }
-.view-all-button:hover{
+.view-all-button:hover {
     background: darkred;
 }
 
