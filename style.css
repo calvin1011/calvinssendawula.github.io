@@ -25,59 +25,76 @@ body{
     padding: 10px 10%;
 }
 
-nav{
+/* ===== NAVIGATION BAR ===== */
+nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    z-index: 1000;
 }
 
-.logo{
-    width: 140px;
+/* Left-aligned Portfolio logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    position: fixed;
+    left: 10%;
+    top: 20px;
+    z-index: 1100;
 }
 
-nav ul li{
-    display: inline-block;
+/* Navigation links */
+#sidemenu li {
     list-style: none;
-    margin: 10px 20px;
+    padding: 15px;
 }
 
-nav ul li a{
-    color: #fff;
+#sidemenu a {
+    color: white;
     text-decoration: none;
     font-size: 18px;
-    position: relative;
+    display: block;
 }
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #ff004f;
+
+/* Navigation Menu - Initially Hidden */
+#sidemenu {
+    display: none;
     position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
+    top: 60px;
+    right: 0;
+    background: black;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
 }
-nav ul li a:hover::after{
-    width: 100%;
-}
-.header-text{
-    margin-top: 20%;
-    font-size: 30px;
-}
-.header-text h1{
-    font-size: 60px;
-    margin-top: 20px;
-}
-.header-text h1 span{
-    color: #ff004f;
+
+/* Hamburger Menu - Always on Right */
+.menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 10%;
+    z-index: 1100;
 }
 
 #typing-text {
     font-size: 30px;
     font-weight: bold;
     color: #ff004f;
-    border-right: 3px solid #ff004f; /* Cursor effect */
+    border-right: 3px solid #ff004f;
     padding-right: 8px;
     white-space: nowrap;
     overflow: hidden;

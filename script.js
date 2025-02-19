@@ -60,10 +60,32 @@ function closeAllExperience() {
 }
 
 // ========== MENU FUNCTIONALITY ==========
-function openmenu() {
-    document.getElementById("sidemenu").style.right = "0";
+const menu = document.getElementById("sidemenu");
+const menuToggle = document.querySelector(".menu-toggle");
+const closeButton = document.querySelector("#sidemenu .fa-times");
+
+if (closeButton) {  // Check if the close button exists before adding the event
+    closeButton.addEventListener("click", closemenu);
 }
 
-function closemenu() {
-    document.getElementById("sidemenu").style.right = "-200px";
+if (menu && menuToggle) {  // Prevents errors if elements are missing
+    function openmenu() {
+        menu.style.display = "block";
+    }
+
+    function closemenu() {
+        menu.style.display = "none";
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            closemenu();
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll("#sidemenu a").forEach(link => {
+        link.addEventListener("click", closemenu);
+    });
 }
