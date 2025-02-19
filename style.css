@@ -20,6 +20,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 80px;
 }
 .container{
     padding: 10px 10%;
@@ -32,12 +33,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 10%;
+    padding: 10px 10%;
     position: fixed;
     top: 0;
     left: 0;
     background: black;
-    z-index: 1000;
+    z-index: 1100;
 }
 
 /* Left-aligned Portfolio logo */
@@ -46,10 +47,7 @@ nav {
     font-weight: bold;
     color: white;
     text-align: left;
-    position: fixed;
-    left: 10%;
-    top: 20px;
-    z-index: 1100;
+    margin-left: 10%;
 }
 
 /* Navigation links */
