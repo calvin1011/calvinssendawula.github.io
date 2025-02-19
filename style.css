@@ -116,28 +116,80 @@ nav ul li a:hover::after{
     font-weight: 600;
     color: #fff;
 }
-
 /* ===== EXPERIENCE SECTION ===== */
-#experience{
+#experience {
     padding: 50px 0;
 }
-.experience-grid{
+.experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     max-width: 900px;
     margin: auto;
 }
-.experience-card{
+.experience-card {
     background: #222;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
+    cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
 }
-.experience-card:hover{
+.experience-card:hover {
     transform: scale(1.05);
     background: #333;
+}
+
+/* ===== EXPERIENCE POPUP (MODAL) ===== */
+.experience-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+    z-index: 2000;
+}
+.experience-popup.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.close-btn:hover {
+    color: white;
+}
+
+/* Background Overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+#overlay.active {
+    display: block;
 }
 
 /* ===== COMMUNITY SECTION ===== */

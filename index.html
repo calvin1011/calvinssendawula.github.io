@@ -51,13 +51,13 @@
                     and deepen my understanding of software development. That drive led me to pursue a degree in Computer Science, where I
                     continue to refine my skills and grow as an engineer. I am deeply passionate about programming and constantly strive to
                     become a better developer.
+
+                    During my free time, I love to play instruments like the piano, make music tracks and read books.
                 </p>
 
                 <p>
                     Currently, I am working on a couple of personal full-stack projects while juggling school and preparing for entry into the job market soon.
                 </p>
-
-                <p><strong>Summer Plans:</strong> Working as an intern.</p>
 
                 <!-- Connect Button -->
                 <div class="connect-button">
@@ -72,25 +72,66 @@
     <div class="container">
         <h1 class="sub-title">Experience</h1>
         <div class="experience-grid">
-            <div class="experience-card">
+
+            <!-- Amazon -->
+            <div class="experience-card" onclick="openExperience('amazon')">
                 <h2>Amazon</h2>
                 <p>Software Dev Engineer Intern<br>[May 2024 - Aug 2024]</p>
             </div>
-            <div class="experience-card">
+            <div id="amazon" class="experience-popup">
+                <span class="close-btn" onclick="closeExperience('amazon')">&times;</span>
+                <h2>Amazon</h2>
+                <p><strong>Duration:</strong> May 2024 - Aug 2024</p>
+                <p><strong>Role:</strong> Software Dev Engineer Intern</p>
+                <p><strong>Description:</strong> Worked on large-scale backend systems, optimizing services for high-performance and scalability. Integrated AWS technologies to enhance cloud computing solutions.</p>
+            </div>
+
+            <!-- Adams State University - Desktop Technician -->
+            <div class="experience-card" onclick="openExperience('computing-services')">
                 <h2>Adams State University</h2>
                 <p>Desktop Technician<br>[Aug 2021 - Present]</p>
             </div>
-            <div class="experience-card">
+            <div id="computing-services" class="experience-popup">
+                <span class="close-btn" onclick="closeExperience('computing-services')">&times;</span>
+                <h2>Adams State University Computing Services</h2>
+                <p><strong>Duration:</strong> Aug 2021 - Present</p>
+                <p><strong>Role:</strong> Desktop Technician</p>
+                <p><strong>Description:</strong> Built computer images using terminal commands, configured BIOS settings for secure boot, and deployed computers for faculty members while improving IT support efficiency.</p>
+            </div>
+
+            <!-- Adams State University - Supplemental Instructor -->
+            <div class="experience-card" onclick="openExperience('supplemental-instructor')">
                 <h2>Adams State University</h2>
                 <p>Supplemental Instructor CS<br>[Aug 2024 - Present]</p>
             </div>
-            <div class="experience-card">
+            <div id="supplemental-instructor" class="experience-popup">
+                <span class="close-btn" onclick="closeExperience('supplemental-instructor')">&times;</span>
+                <h2>Adams State University</h2>
+                <p><strong>Duration:</strong> Aug 2024 - Present</p>
+                <p><strong>Role:</strong> Supplemental Instructor CS</p>
+                <p><strong>Description:</strong> Assisted CS students in understanding key programming concepts, supported professors in lectures, and guided students in software development practices.</p>
+            </div>
+
+            <!-- CVS Health -->
+            <div class="experience-card" onclick="openExperience('cvs-health')">
                 <h2>CVS Health</h2>
                 <p>Shift Supervisor<br>[May 2018 - Jan 2024]</p>
             </div>
+            <div id="cvs-health" class="experience-popup">
+                <span class="close-btn" onclick="closeExperience('cvs-health')">&times;</span>
+                <h2>CVS Health</h2>
+                <p><strong>Duration:</strong> May 2018 - Jan 2024</p>
+                <p><strong>Role:</strong> Shift Supervisor</p>
+                <p><strong>Description:</strong> Managed store operations, inventory, and customer service. Led my district in "Extra Care Plus" promotions and helped educate customers on healthcare products.</p>
+            </div>
+
         </div>
     </div>
 </div>
+
+<!-- Overlay for background blur effect -->
+<div id="overlay" onclick="closeAllExperience()"></div>
+
 <!-- Community Involvement -->
 <div id="community">
     <div class="container">
@@ -175,6 +216,19 @@
         typeEffect();
     });
 </script>
+
+<script>
+    function openExperience(id) {
+        document.getElementById(id).classList.add("active");
+        document.getElementById("overlay").classList.add("active");
+    }
+
+    function closeExperience(id) {
+        document.getElementById(id).classList.remove("active");
+        document.getElementById("overlay").classList.remove("active");
+    }
+</script>
+
 
 
 </body>
