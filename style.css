@@ -23,6 +23,7 @@ body{
 }
 .container{
     padding: 10px 10%;
+    text-align: center;
 }
 
 /* ===== NAVIGATION BAR ===== */
@@ -110,14 +111,15 @@ nav {
 
 /* ----------- About Section --------------- */
 #about {
-    padding: 100px 0; /* Increased padding for more spacing */
+    padding: 100px 0;
     color: #ababab;
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .about-col-1 {
@@ -126,7 +128,10 @@ nav {
 
 .about-col-1 img {
     width: 100%;
-    border-radius: 15px;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
 .about-col-2 {
@@ -135,22 +140,22 @@ nav {
 
 /* Title Styling */
 .sub-title {
-    font-size: 70px; /* Increased size */
+    font-size: 70px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 20px; /* Added spacing */
+    margin-bottom: 20px;
 }
 
 /* Paragraph Styling */
 .about-col-2 p {
-    font-size: 20px; /* Increased size */
-    line-height: 1.8; /* Increased line spacing */
-    margin-bottom: 15px; /* Added spacing between paragraphs */
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 15px;
 }
 
 /* Highlighted Text */
 .about-col-2 strong {
-    color: #fff; /* Ensure strong elements stand out */
+    color: #fff;
 }
 
 
@@ -209,7 +214,7 @@ nav {
 
 /* ===== EXPERIENCE POPUP (MODAL) ===== */
 .experience-popup {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
