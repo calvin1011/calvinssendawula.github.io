@@ -137,21 +137,36 @@
     <div class="container">
         <h1 class="sub-title">Community Involvement</h1>
         <div class="community-grid">
+
+            <!-- STEM Mentor -->
             <div class="community-card">
                 <h2>STEM Mentor</h2>
                 <p>Supporting students academically and professionally in STEM fields.</p>
             </div>
+
+            <!-- Cottonwood Community -->
             <div class="community-card">
-                <h2>Cottonwood Park Project</h2>
-                <p>Led a community service project installing dog waste disposals in Cottonwood Park.</p>
+                <h2>Cottonwood Community</h2>
+                <p>Community Leader</p>
+                <p>
+                    I organized youth groups and taught them how to grow in Christ and study the Bible.
+                    I also led a service project where we installed dog waste disposals in Cottonwood Park
+                    to encourage environmental responsibility.
+                </p>
             </div>
-            <div class="community-card">
-                <h2>Hackathons</h2>
-                <p>Participated in various hackathons. <a href="https://devpost.com/calvinssendawula" target="_blank">View Hackathon Profile</a></p>
-            </div>
+
         </div>
+
+        <!-- Hackathon Full-Width Button -->
+        <div class="community-full-width">
+            <a href="https://devpost.com/calvinssendawula" target="_blank" class="hackathon-button">
+                View Hackathon Involvement
+            </a>
+        </div>
+
     </div>
 </div>
+
 <!-- Projects -->
 <div id="projects">
     <div class="container">
@@ -167,69 +182,7 @@
     </div>
 </div>
 
-<script>
-    function openmenu(){ document.getElementById("sidemenu").style.right = "0"; }
-    function closemenu(){ document.getElementById("sidemenu").style.right = "-200px"; }
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const textElement = document.getElementById("typing-text");
-        const words = [
-            "Full Stack Developer",
-            "AI Enthusiast",
-            "Open-Source Contributor",
-            "Software Engineer",
-            "Car Enthusiast",
-            "I love swimming",
-            "Watch Enthusiast"
-        ];
-
-        let wordIndex = 0;
-        let letterIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            let currentWord = words[wordIndex];
-            if (isDeleting) {
-                textElement.innerHTML = currentWord.substring(0, letterIndex - 1);
-                letterIndex--;
-            } else {
-                textElement.innerHTML = currentWord.substring(0, letterIndex + 1);
-                letterIndex++;
-            }
-
-            let typingSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && letterIndex === currentWord.length) {
-                typingSpeed = 1000; // Pause before deleting
-                isDeleting = true;
-            } else if (isDeleting && letterIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typingSpeed = 500; // Pause before typing the next word
-            }
-
-            setTimeout(typeEffect, typingSpeed);
-        }
-
-        typeEffect();
-    });
-</script>
-
-<script>
-    function openExperience(id) {
-        document.getElementById(id).classList.add("active");
-        document.getElementById("overlay").classList.add("active");
-    }
-
-    function closeExperience(id) {
-        document.getElementById(id).classList.remove("active");
-        document.getElementById("overlay").classList.remove("active");
-    }
-</script>
-
-
+<script src="script.js"></script>
 
 </body>
 </html>

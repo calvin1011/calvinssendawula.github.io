@@ -193,17 +193,17 @@ nav ul li a:hover::after{
 }
 
 /* ===== COMMUNITY SECTION ===== */
-#community{
+#community {
     padding: 50px 0;
 }
-.community-grid{
+.community-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     max-width: 900px;
     margin: auto;
 }
-.community-card{
+.community-card {
     background: white;
     color: black;
     padding: 25px;
@@ -212,8 +212,28 @@ nav ul li a:hover::after{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
-.community-card:hover{
+.community-card:hover {
     transform: scale(1.05);
+}
+
+/* Hackathon Full-Width Button */
+.community-full-width {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.hackathon-button {
+    background: #ff004f;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+.hackathon-button:hover {
+    background: darkred;
 }
 
 /* ===== PROJECTS SECTION ===== */
