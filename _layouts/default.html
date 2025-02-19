@@ -2,93 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <title>Calvin Ssendawula - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h1 class="logo">Calvin.</h1>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Software Engineer | AI Enthusiast</p>
+            <h1>Hi, I'm <span>Calvin Ssendawula</span></h1>
+        </div>
+    </div>
+</div>
+<!-- About Me -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/calvin.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am a Computer Science student at Adams State University, graduating in December 2025. I started coding in high school, beginning with HTML, and grew a passion for software engineering. I have experience in full-stack development and AI projects.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Experience -->
+<div id="experience">
+    <div class="container">
+        <h1 class="sub-title">Experience</h1>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h2>Amazon</h2>
+                <p>Software Dev Engineer Intern<br>[May 2024 - Aug 2024]</p>
+            </div>
+            <div class="experience-card">
+                <h2>Adams State University</h2>
+                <p>Desktop Technician<br>[Aug 2021 - Present]</p>
+            </div>
+            <div class="experience-card">
+                <h2>Adams State University</h2>
+                <p>Supplemental Instructor CS<br>[Aug 2024 - Present]</p>
+            </div>
+            <div class="experience-card">
+                <h2>CVS Health</h2>
+                <p>Shift Supervisor<br>[May 2018 - Jan 2024]</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Community Involvement -->
+<div id="community">
+    <div class="container">
+        <h1 class="sub-title">Community Involvement</h1>
+        <div class="community-grid">
+            <div class="community-card">
+                <h2>STEM Mentor</h2>
+                <p>Supporting students academically and professionally in STEM fields.</p>
+            </div>
+            <div class="community-card">
+                <h2>Cottonwood Park Project</h2>
+                <p>Led a community service project installing dog waste disposals in Cottonwood Park.</p>
+            </div>
+            <div class="community-card">
+                <h2>Hackathons</h2>
+                <p>Participated in various hackathons. <a href="https://devpost.com/calvinssendawula" target="_blank">View Hackathon Profile</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Projects -->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="projects-container">
+            <div class="project-card">
+                <h2>Secure Data Transmission</h2>
+                <p>Implemented secure communication for remote ML training.</p>
+                <a href="https://github.com/calvin1011/SECURE-DATA-TRANSMISSION" target="_blank">View Project</a>
+            </div>
+        </div>
+        <a href="https://github.com/calvin1011?tab=repositories" class="btn">View All Projects</a>
+    </div>
+</div>
 
-<header>
-    <h1>Portfolio.</h1>
-
-    <!-- Mobile Menu Toggle (☰) -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <!-- Navigation Links -->
-    <nav class="nav-links">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/about' | relative_url }}">About Me</a>
-        <a href="{{ '/experience' | relative_url }}">Experience</a>
-        <a href="{{ '/community' | relative_url }}">Community</a>
-        <a href="{{ '/projects' | relative_url }}">Projects</a>
-    </nav>
-</header>
-
-<section>
-    {{ content }}
-</section>
-
-<footer>
-    <p>THE SKY IS THE LIMIT</p>
-</footer>
-
-<!-- 🚀 Typing Effect Script -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const textElement = document.getElementById("typing-text");
-        if (!textElement) return; // Prevents errors if element is missing
-
-        const words = ["I'm a Full Stack Developer", "I'm an AI Enthusiast", "I'm an Open-Source Contributor",
-            "I'm a Software Engineer", "I'm a Car Enthusiast", "I love swimming", "I'm a Watch Enthusiast"];
-        let wordIndex = 0;
-        let letterIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            let currentWord = words[wordIndex];
-            if (isDeleting) {
-                textElement.innerHTML = currentWord.substring(0, letterIndex - 1);
-                letterIndex--;
-            } else {
-                textElement.innerHTML = currentWord.substring(0, letterIndex + 1);
-                letterIndex++;
-            }
-
-            let typingSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && letterIndex === currentWord.length) {
-                typingSpeed = 1000; // Pause before deleting
-                isDeleting = true;
-            } else if (isDeleting && letterIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typingSpeed = 500; // Pause before typing the next word
-            }
-
-            setTimeout(typeEffect, typingSpeed);
-        }
-
-        typeEffect();
-    });
-</script>
-
-<!-- 🚀 JavaScript for Experience Popups -->
-<script>
-    function openExperience(id) {
-        document.getElementById(id).style.display = "block";
-    }
-
-    function closeExperience(id) {
-        document.getElementById(id).style.display = "none";
-    }
-</script>
-
-<!-- 🚀 Mobile Menu Toggle -->
-<script>
-    function toggleMenu() {
-        const navLinks = document.querySelector(".nav-links");
-        navLinks.classList.toggle("nav-active");
-    }
+    function openmenu(){ document.getElementById("sidemenu").style.right = "0"; }
+    function closemenu(){ document.getElementById("sidemenu").style.right = "-200px"; }
 </script>
 
 </body>

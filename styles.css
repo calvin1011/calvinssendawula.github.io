@@ -1,135 +1,166 @@
 /* ===== GENERAL STYLES ===== */
-body, html {
-    font-family: Arial, sans-serif;
+*{
     margin: 0;
     padding: 0;
-    background-color: #0f0f0f;
-    color: #33ff33;
-    height: 100%;
-    overflow: hidden; /* Prevent normal scrolling */
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
-
-/* ===== FULL SCREEN SCROLLING CONTAINER ===== */
-.container {
-    height: 100vh; /* Full screen height */
-    width: 100%;
-    scroll-snap-type: y mandatory; /* Enables smooth vertical snapping */
-    overflow-y: scroll; /* Enables scrolling */
+html{
     scroll-behavior: smooth;
 }
-
-/* ===== INDIVIDUAL SECTIONS ===== */
-section {
-    height: 100vh; /* Each section takes full screen */
+body{
+    background: #080808;
+    color: #fff;
+}
+#header{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    scroll-snap-align: start; /* Ensures smooth full-screen snapping */
+    height: 100vh;
+    background-image: url(images/calvin.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container{
+    padding: 10px 10%;
 }
 
-/* ===== NAVIGATION MENU (Fixed at the Top) ===== */
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #222;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-/* Navigation Links */
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: #33ff33;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 12px;
-    white-space: nowrap;
-}
-
-.nav-links a:hover {
-    background-color: #444;
-    border-radius: 5px;
-}
-
-/* ===== MOBILE MENU (Hamburger) ===== */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-}
-
-/* ===== ABOUT ME PAGE ===== */
-.about-container {
+nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    padding: 40px;
-    max-width: 900px;
-    margin: auto;
+    flex-wrap: wrap;
 }
 
-/* Profile Image */
-.about-image img {
-    width: 280px;
-    height: auto;
+.logo{
+    width: 140px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+
+/* -----------about--------------- */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
     border-radius: 15px;
-    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
 }
-
-/* About Me Text */
-.about-text {
-    flex: 1;
-    text-align: left;
-    font-size: 22px;
-    line-height: 1.8;
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
 }
 
 /* ===== EXPERIENCE SECTION ===== */
-.experience-grid {
+#experience{
+    padding: 50px 0;
+}
+.experience-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     max-width: 900px;
     margin: auto;
+}
+.experience-card{
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.experience-card:hover{
+    transform: scale(1.05);
+    background: #333;
 }
 
 /* ===== COMMUNITY SECTION ===== */
-.community-grid {
+#community{
+    padding: 50px 0;
+}
+.community-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     max-width: 900px;
     margin: auto;
 }
+.community-card{
+    background: white;
+    color: black;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.community-card:hover{
+    transform: scale(1.05);
+}
 
 /* ===== PROJECTS SECTION ===== */
-.projects-container {
+#projects{
+    padding: 50px 0;
+}
+.projects-container{
     display: flex;
     gap: 20px;
     overflow-x: auto;
     padding: 20px;
     scrollbar-width: none;
 }
-
-.projects-container::-webkit-scrollbar {
+.projects-container::-webkit-scrollbar{
     display: none;
 }
-
-.project-card {
-    background-color: #222;
+.project-card{
+    background: #222;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
@@ -138,15 +169,29 @@ nav {
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
 }
-
-.project-card:hover {
+.project-card:hover{
     transform: scale(1.05);
-    background-color: #333;
+    background: #333;
+}
+
+/* View All Projects Button */
+.view-all-button{
+    background: red;
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+.view-all-button:hover{
+    background: darkred;
 }
 
 /* ===== FOOTER ===== */
-footer {
-    background-color: #222;
+footer{
+    background: #222;
     color: #33ff33;
     padding: 20px;
     text-align: center;
@@ -155,10 +200,10 @@ footer {
 
 /* ===== MOBILE RESPONSIVENESS ===== */
 @media screen and (max-width: 768px) {
-    .nav-links {
+    .nav-links{
         display: none;
         flex-direction: column;
-        background-color: #222;
+        background: #222;
         width: 100%;
         position: absolute;
         top: 60px;
@@ -166,35 +211,20 @@ footer {
         text-align: center;
         padding: 20px 0;
     }
-
-    .nav-links a {
+    .nav-links a{
         display: block;
         padding: 12px;
     }
-
-    /* Show Mobile Menu Button */
-    .menu-toggle {
+    .menu-toggle{
         display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
     }
-
-    /* Activate Mobile Menu */
-    .nav-active {
+    .nav-active{
         display: flex;
     }
-
-    /* Stack About Me Content */
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .about-image img {
-        width: 200px;
-    }
-
-    /* Stack Grid Sections */
-    .experience-grid, .community-grid, .projects-container {
+    .experience-grid, .community-grid, .projects-container{
         grid-template-columns: 1fr;
     }
 }
