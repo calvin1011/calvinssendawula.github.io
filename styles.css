@@ -6,21 +6,13 @@ body {
     background-color: #0f0f0f;
     color: #33ff33;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
-/* ===== FULL-PAGE SCROLLING (Allows Natural Scrolling) ===== */
-html {
-    scroll-behavior: smooth;
-}
-
-section {
-    width: 100%;
+/* ===== FLEXIBLE CONTAINER FOR CONTENT ===== */
+.container {
     max-width: 1200px;
     margin: auto;
-    padding: 80px 20px;
-    min-height: 100vh;
-    text-align: center;
+    padding: 0 20px;
 }
 
 /* ===== NAVIGATION MENU ===== */
@@ -40,7 +32,7 @@ nav {
 /* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -57,12 +49,20 @@ nav {
     border-radius: 5px;
 }
 
-/* ===== MOBILE MENU (Hamburger) ===== */
+/* Mobile Menu (Hamburger) */
 .menu-toggle {
     display: none;
     font-size: 28px;
     color: white;
     cursor: pointer;
+}
+
+/* ===== SECTION SPACING ===== */
+section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
 }
 
 /* ===== ABOUT ME PAGE ===== */
@@ -71,14 +71,14 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    padding: 60px;
-    max-width: 1000px;
+    padding: 40px;
+    max-width: 900px;
     margin: auto;
 }
 
 /* Profile Image */
 .about-image img {
-    width: 300px;
+    width: 280px;
     height: auto;
     border-radius: 15px;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
@@ -118,7 +118,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -141,7 +141,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
 }
 
