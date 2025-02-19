@@ -1,21 +1,35 @@
 /* ===== GENERAL STYLES ===== */
-body {
+body, html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #0f0f0f;
     color: #33ff33;
-    overflow-x: hidden;
+    height: 100%;
+    overflow: hidden; /* Prevent normal scrolling */
 }
 
-/* ===== FLEXIBLE CONTAINER FOR CONTENT ===== */
+/* ===== FULL SCREEN SCROLLING CONTAINER ===== */
 .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
+    height: 100vh; /* Full screen height */
+    width: 100%;
+    scroll-snap-type: y mandatory; /* Enables smooth vertical snapping */
+    overflow-y: scroll; /* Enables scrolling */
+    scroll-behavior: smooth;
 }
 
-/* ===== NAVIGATION MENU ===== */
+/* ===== INDIVIDUAL SECTIONS ===== */
+section {
+    height: 100vh; /* Each section takes full screen */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    scroll-snap-align: start; /* Ensures smooth full-screen snapping */
+}
+
+/* ===== NAVIGATION MENU (Fixed at the Top) ===== */
 nav {
     display: flex;
     justify-content: center;
@@ -32,8 +46,7 @@ nav {
 /* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .nav-links a {
@@ -49,20 +62,12 @@ nav {
     border-radius: 5px;
 }
 
-/* Mobile Menu (Hamburger) */
+/* ===== MOBILE MENU (Hamburger) ===== */
 .menu-toggle {
     display: none;
     font-size: 28px;
     color: white;
     cursor: pointer;
-}
-
-/* ===== SECTION SPACING ===== */
-section {
-    padding: 80px 20px;
-    max-width: 900px;
-    margin: 40px auto;
-    text-align: center;
 }
 
 /* ===== ABOUT ME PAGE ===== */
@@ -92,27 +97,6 @@ section {
     line-height: 1.8;
 }
 
-/* "Let's Connect" Button */
-.connect-button {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.connect-button a {
-    background-color: #33ff33;
-    color: black;
-    padding: 16px 28px;
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out;
-}
-
-.connect-button a:hover {
-    background-color: #28cc28;
-}
-
 /* ===== EXPERIENCE SECTION ===== */
 .experience-grid {
     display: grid;
@@ -122,41 +106,13 @@ section {
     margin: auto;
 }
 
-.experience-card {
-    background-color: #222;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.experience-card:hover {
-    transform: scale(1.05);
-    background-color: #333;
-}
-
-/* ===== COMMUNITY INVOLVEMENT SECTION ===== */
+/* ===== COMMUNITY SECTION ===== */
 .community-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     max-width: 900px;
     margin: auto;
-}
-
-.community-card {
-    background-color: white;
-    color: black;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.community-card:hover {
-    transform: scale(1.05);
 }
 
 /* ===== PROJECTS SECTION ===== */
@@ -188,22 +144,6 @@ section {
     background-color: #333;
 }
 
-/* View All Projects Button */
-.view-all-button {
-    background-color: red;
-    color: white;
-    padding: 14px 28px;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out;
-}
-
-.view-all-button:hover {
-    background-color: darkred;
-}
-
 /* ===== FOOTER ===== */
 footer {
     background-color: #222;
@@ -215,7 +155,6 @@ footer {
 
 /* ===== MOBILE RESPONSIVENESS ===== */
 @media screen and (max-width: 768px) {
-    /* Navigation Fix */
     .nav-links {
         display: none;
         flex-direction: column;
