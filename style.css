@@ -12,6 +12,12 @@ body{
     background: #080808;
     color: #fff;
 }
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100vw; /* Ensures full width */
+}
+
 #header {
     width: 100%;
     height: 100vh;
@@ -23,7 +29,9 @@ body{
     padding-top: 80px;
 }
 .container{
-    padding: 10px 10%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+    padding: 0 5%; /* Reduce padding for small screens */
     text-align: center;
 }
 
@@ -63,7 +71,7 @@ nav {
     display: block;
 }
 
-/* Navigation Menu - Initially Hidden */
+/* Navigation Menu */
 #sidemenu {
     display: none;
     position: absolute;
@@ -85,7 +93,7 @@ nav {
     cursor: pointer;
     position: fixed;
     top: 20px;
-    right: 10%;
+    right: 5%;
     z-index: 1100;
 }
 
@@ -107,7 +115,7 @@ nav {
 }
 
 
-/* ----------- About Section --------------- */
+/* ---- About Section ---- */
 #about {
     padding: 100px 0;
     color: #ababab;
@@ -175,7 +183,6 @@ nav {
     background: darkred;
 }
 
-/* Specific to the "Let's Connect" button */
 .connect-button {
     text-align: center;
     margin-top: 20px;
@@ -234,7 +241,6 @@ nav {
     justify-content: center;
 }
 
-/* Close Button */
 .close-btn {
     font-size: 30px;
     cursor: pointer;
@@ -265,7 +271,7 @@ nav {
 /* Experience Subtext */
 .experience-subtext {
     font-size: 14px;
-    color: #aaa;  /* Light gray text */
+    color: #aaa;
     text-align: center;
     margin-top: -10px;
     margin-bottom: 20px;
@@ -430,6 +436,13 @@ footer{
     margin-top: 60px;
 }
 
+.projects-container, .experience-grid, .community-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* ===== MOBILE RESPONSIVENESS ===== */
 @media screen and (max-width: 768px) {
     .nav-links{
@@ -458,5 +471,26 @@ footer{
     }
     .experience-grid, .community-grid, .projects-container{
         grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 0 3%;
+    }
+
+    .sub-title {
+        font-size: 50px;
+    }
+
+    .about-col-1 img {
+        max-width: 200px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .view-all-button {
+        width: 90%;
     }
 }
