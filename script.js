@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function typeEffect() {
         let currentWord = words[wordIndex];
+
         if (isDeleting) {
             textElement.innerHTML = currentWord.substring(0, letterIndex - 1);
             letterIndex--;
@@ -24,15 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
             letterIndex++;
         }
 
-        let typingSpeed = isDeleting ? 50 : 100;
+        let typingSpeed = isDeleting ? 25 : 50;
 
         if (!isDeleting && letterIndex === currentWord.length) {
-            typingSpeed = 1000; // Pause before deleting
             isDeleting = true;
         } else if (isDeleting && letterIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500; // Pause before typing the next word
         }
 
         setTimeout(typeEffect, typingSpeed);
@@ -41,10 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
     typeEffect();
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const bubbleContainer = document.createElement("div");
     bubbleContainer.setAttribute("id", "bubble-container");
-    document.body.appendChild(bubbleContainer); // Append it to body
+    document.body.appendChild(bubbleContainer);
 
     function createBubble() {
         if (!bubbleContainer) return;
@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
         bubble.classList.add("bubble");
 
         // Randomize size, position, and animation
-        const size = Math.random() * 30 + 10 + "px"; // 10px to 40px
+        const size = Math.random() * 30 + 10 + "px";
         bubble.style.width = size;
         bubble.style.height = size;
         bubble.style.left = Math.random() * window.innerWidth + "px";
-        bubble.style.animationDuration = Math.random() * 5 + 3 + "s"; // 3s to 8s
+        bubble.style.animationDuration = Math.random() * 5 + 3 + "s";
 
         bubbleContainer.appendChild(bubble);
 
@@ -98,7 +98,7 @@ if (closeButton) {  // Check if the close button exists before adding the event
     closeButton.addEventListener("click", closemenu);
 }
 
-if (menu && menuToggle) {  // Prevents errors if elements are missing
+if (menu && menuToggle) {
     function openmenu() {
         menu.style.display = "block";
     }
