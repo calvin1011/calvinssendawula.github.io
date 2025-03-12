@@ -41,6 +41,36 @@ document.addEventListener("DOMContentLoaded", function () {
     typeEffect();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const bubbleContainer = document.createElement("div");
+    bubbleContainer.setAttribute("id", "bubble-container");
+    document.body.appendChild(bubbleContainer); // Append it to body
+
+    function createBubble() {
+        if (!bubbleContainer) return;
+
+        const bubble = document.createElement("div");
+        bubble.classList.add("bubble");
+
+        // Randomize size, position, and animation
+        const size = Math.random() * 30 + 10 + "px"; // 10px to 40px
+        bubble.style.width = size;
+        bubble.style.height = size;
+        bubble.style.left = Math.random() * window.innerWidth + "px";
+        bubble.style.animationDuration = Math.random() * 5 + 3 + "s"; // 3s to 8s
+
+        bubbleContainer.appendChild(bubble);
+
+        // Remove bubble after animation
+        setTimeout(() => {
+            bubble.remove();
+        }, 8000);
+    }
+
+    // Generate bubbles every 600ms
+    setInterval(createBubble, 600);
+});
+
 // ========== EXPERIENCE POPUP FUNCTIONALITY ==========
 function openExperience(id) {
     document.getElementById(id).classList.add("active");
