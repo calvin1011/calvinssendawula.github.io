@@ -11,6 +11,19 @@ html{
 body{
     background: #080808;
     color: #fff;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+}
+
+/*full screen for each section*/
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 5%;
+    scroll-snap-align: start;
 }
 
 html, body {
@@ -217,14 +230,14 @@ nav {
 
 /* Bubble Container */
 #bubble-container {
-    position: fixed; /* Fix to the viewport */
+    position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: -1; /* Ensures bubbles stay behind content */
+    z-index: -1;
     overflow: hidden;
-    pointer-events: none; /* Prevents bubbles from blocking clicks */
+    pointer-events: none;
 }
 
 /* Bubble Style */

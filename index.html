@@ -6,35 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calvin Ssendawula - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- Fixed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
 
+<!-- Background Floating Bubbles -->
 <div id="bubble-container"></div>
 
-<div id="header">
+<!-- Navigation -->
+<nav>
+    <h1 class="logo">Portfolio.</h1>
+    <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <i class="fas fa-times" onclick="closemenu()"></i>
+    </ul>
+    <i class="fas fa-bars menu-toggle" onclick="openmenu()"></i>
+</nav>
+
+<!-- Hero Section -->
+<div id="header" class="section">
     <div class="container">
-        <nav>
-            <h1 class="logo">Portfolio.</h1>
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#community">Community</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i>
-            </ul>
-            <i class="fas fa-bars menu-toggle" onclick="openmenu()"></i>
-        </nav>
         <div class="header-text">
             <h1>Hi, I'm <span>Calvin Ssendawula</span></h1>
             <h2><span id="typing-text"></span></h2>
         </div>
     </div>
 </div>
-<!-- About Me -->
-<div id="about">
+
+<!-- About Me Section -->
+<div id="about" class="section">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
@@ -43,11 +48,9 @@
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
                 <p><strong>Thank you for checking out my Portfolio</strong></p>
-
                 <p>
                     Hi, I am a current student at <strong>Adams State University</strong>, studying Computer Science, graduating in <strong>December 2025</strong>.
                 </p>
-
                 <p>
                     I discovered my passion for coding during my junior year of high school when I took a basic HTML class.
                     The ability to bring ideas to life through code instantly captivated me. Building an application is one thing,
@@ -62,10 +65,9 @@
                 </p>
 
                 <p>
-                    Currently, I am working on a couple of personal full-stack projects while juggling school and preparing for entry into the job market soon.
+                    Currently, I am working on personal full-stack projects while juggling school and prepping for entry into the job market.
                 </p>
 
-                <!-- Connect Button -->
                 <div class="connect-button">
                     <a href="https://www.linkedin.com/in/calvin-ssendawula-7874b0236/" target="_blank" class="button">Let's Connect</a>
                 </div>
@@ -73,14 +75,13 @@
         </div>
     </div>
 </div>
-<!-- Experience -->
-<div id="experience">
+
+<!-- Experience Section -->
+<div id="experience" class="section">
     <div class="container">
         <h1 class="sub-title">Experience</h1>
         <p class="experience-subtext">*Select to view description*</p>
         <div class="experience-grid">
-
-            <!-- Amazon -->
             <div class="experience-card" onclick="openExperience('amazon')">
                 <h2>Amazon</h2>
                 <p>Software Dev Engineer Intern<br>[May 2024 - Aug 2024]</p>
@@ -90,7 +91,7 @@
                 <h2>Amazon</h2>
                 <p><strong>Duration:</strong> May 2024 - Aug 2024</p>
                 <p><strong>Role:</strong> Software Dev Engineer Intern</p>
-                <p><strong>Description:</strong> Worked on large-scale backend systems, optimizing services for high-performance and scalability. Integrated AWS technologies to enhance cloud computing solutions.</p>
+                <p><strong>Description:</strong> Worked on large-scale backend systems, optimizing services for high-performance and scalability.</p>
             </div>
 
             <!-- Adams State University - Desktop Technician -->
@@ -136,22 +137,17 @@
     </div>
 </div>
 
-<!-- Overlay for background blur effect -->
-<div id="overlay" onclick="closeAllExperience()"></div>
-
-<!-- Community Involvement -->
-<div id="community">
+<!-- Community Section -->
+<div id="community" class="section">
     <div class="container">
         <h1 class="sub-title">Community Involvement</h1>
         <div class="community-grid">
 
-            <!-- STEM Mentor -->
             <div class="community-card">
                 <h2>STEM Mentor</h2>
                 <p>Supporting students academically and professionally in STEM fields.</p>
             </div>
 
-            <!-- Cottonwood Community -->
             <div class="community-card">
                 <h2>Cottonwood Community</h2>
                 <p>Community Leader</p>
@@ -161,27 +157,22 @@
                     to encourage environmental responsibility.
                 </p>
             </div>
-
         </div>
-
-        <!-- Hackathon Full-Width Button -->
         <div class="community-full-width">
             <a href="https://devpost.com/calvinssendawula" target="_blank" class="hackathon-button">
                 View Hackathon Involvement
             </a>
         </div>
-
     </div>
 </div>
 
 <!-- Projects Section -->
-<div id="projects">
+<div id="projects" class="section">
     <div class="container">
         <h1 class="sub-title">Projects</h1>
         <p class="projects-subtext">*select to view the code/documentation*</p>
         <p class="projects-subtext">*these are some of my impactful projects in my GitHub; there are more!*</p>
 
-        <!-- Skills Filter (if needed) -->
         <div class="project-filters">
             <button class="filter-btn">Java</button>
             <button class="filter-btn">Python</button>
@@ -191,7 +182,6 @@
         </div>
 
         <div class="projects-container">
-            <!-- Secure Data Transmission Project -->
             <div class="project-card">
                 <h2 class="project-title">Secure Data Transmission</h2>
                 <div class="project-tags">
@@ -204,7 +194,7 @@
                 </a>
             </div>
 
-            <!-- Kobby Watch App Project -->
+            !-- Kobby Watch App Project -->
             <div class="project-card">
                 <h2 class="project-title">Kobby Watch App</h2>
                 <p>AI-powered watchOS app for remembering names during networking.</p>
@@ -223,13 +213,14 @@
             </div>
         </div>
 
-        <!-- View All Projects Button -->
         <div class="projects-footer">
             <a href="https://github.com/calvin1011?tab=repositories" class="view-all-button">View All Projects</a>
         </div>
     </div>
 </div>
 
+<!-- Overlay for background blur effect -->
+<div id="overlay" onclick="closeAllExperience()"></div>
 
 <script src="script.js"></script>
 
