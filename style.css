@@ -437,6 +437,7 @@ nav {
 }
 .project-tags {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
     margin: 10px 0;
@@ -444,6 +445,7 @@ nav {
 .tag {
     background: #444;
     color: white;
+    white-space: nowrap;
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 5px;
