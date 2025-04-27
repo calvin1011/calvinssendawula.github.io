@@ -38,8 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     typeEffect();
+
+    // Project carousel functionality
+    initProjectCarousel();
 });
 
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -53,22 +57,96 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// // ========== PROJECT FILTER FUNCTIONALITY ==========
-// document.querySelectorAll('.filter-btn').forEach(button => {
-//     button.addEventListener('click', () => {
-//         const skill = button.getAttribute('data-skill');
-//         const cards = document.querySelectorAll('.project-card');
-//
-//         cards.forEach(card => {
-//             const tags = card.getAttribute('data-tags') || '';
-//             if (skill === "all" || tags.includes(skill)) {
-//                 card.style.display = "block";
-//             } else {
-//                 card.style.display = "none";
-//             }
-//         });
-//     });
-// });
+// Project filter functionality (uncommented and updated)
+function initProjectFilters() {
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const skill = button.getAttribute('data-skill');
+            const cards = document.querySelectorAll('.project-card');
+
+            cards.forEach(card => {
+                const tags = card.getAttribute('data-tags') || '';
+                if (skill === "all" || tags.includes(skill)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Reset carousel position
+            const projectsContainer = document.querySelector('.projects-container');
+            if (projectsContainer) {
+                projectsContainer.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }
+        });
+    });
+}
+
+// Project carousel functionality
+let currentIndex = 0;
+const itemsPerView = window.innerWidth < 768 ? 1 : 3;
+
+function initProjectCarousel() {
+    const projectsContainer = document.querySelector('.projects-container');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+
+    if (!projectsContainer || !prevBtn || !nextBtn) return;
+
+    const projectCards = document.querySelectorAll('.project-card');
+    const maxIndex = Math.max(0, projectCards.length - itemsPerView);
+
+    function updateCarousel() {
+        const cardWidth = projectCards[0].offsetWidth;
+        const gap = 20; // gap between cards
+        const offset = -(currentIndex * (cardWidth + gap));
+        projectsContainer.style.transform = `translateX(${offset}px)`;
+
+        // Update button states
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+    }
+
+    // Previous button click
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    // Next button click
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Initialize button states
+    updateCarousel();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        // Recalculate items per view based on screen width
+        const newItemsPerView = window.innerWidth < 768 ? 1 : 3;
+
+        if (newItemsPerView !== itemsPerView) {
+            // Reset current index if needed
+            currentIndex = 0;
+            updateCarousel();
+        }
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const bubbleContainer = document.createElement("div");
@@ -100,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(createBubble, 600);
 });
 
-// ========== EXPERIENCE POPUP FUNCTIONALITY ==========
+// Experience popup functionality
 function openExperience(id) {
     document.getElementById(id).classList.add("active");
     document.getElementById("overlay").classList.add("active");
@@ -118,7 +196,7 @@ function closeAllExperience() {
     document.getElementById("overlay").classList.remove("active");
 }
 
-// ========== MENU FUNCTIONALITY ==========
+// Menu functionality
 const menu = document.getElementById("sidemenu");
 const menuToggle = document.querySelector(".menu-toggle");
 const closeButton = document.querySelector("#sidemenu .fa-times");
@@ -135,6 +213,15 @@ if (menu && menuToggle) {
     function closemenu() {
         menu.style.display = "none";
     }
+
+    // Toggle menu when clicking the menu icon
+    menuToggle.addEventListener("click", function() {
+        if (menu.style.display === "block") {
+            closemenu();
+        } else {
+            openmenu();
+        }
+    });
 
     // Close menu when clicking outside
     document.addEventListener("click", function (event) {
