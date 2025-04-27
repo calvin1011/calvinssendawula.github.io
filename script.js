@@ -263,3 +263,49 @@ document.addEventListener("DOMContentLoaded", function () {
     // Create dots every 500ms
     setInterval(createDot, 500);
 });
+
+/* skill filtering*/
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    let activeFilters = new Set();
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const skill = this.getAttribute("data-skill");
+
+            if (skill === "all") {
+                activeFilters.clear();
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+            } else {
+                // Toggle the skill selection
+                if (activeFilters.has(skill)) {
+                    activeFilters.delete(skill);
+                    this.classList.remove("active");
+                } else {
+                    activeFilters.add(skill);
+                    this.classList.add("active");
+                    document.querySelector(".filter-btn[data-skill='all']").classList.remove("active");
+                }
+            }
+
+            filterProjects();
+        });
+    });
+
+    function filterProjects() {
+        projectCards.forEach(card => {
+            const cardTags = card.getAttribute("data-tags").split(" ");
+
+            if (activeFilters.size === 0) {
+                card.style.display = "block"; // Show all if no filters selected
+            } else {
+                const matches = Array.from(activeFilters).every(filter => cardTags.includes(filter));
+                card.style.display = matches ? "block" : "none";
+            }
+        });
+    }
+});
+

@@ -37,8 +37,9 @@ html, body {
     background-color: rgba(0,0,0, 0.85);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: left;
+    flex-direction: column;
     padding-top: 80px;
     padding-left: 10%;
     position: relative;
