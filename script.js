@@ -53,6 +53,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// // ========== PROJECT FILTER FUNCTIONALITY ==========
+// document.querySelectorAll('.filter-btn').forEach(button => {
+//     button.addEventListener('click', () => {
+//         const skill = button.getAttribute('data-skill');
+//         const cards = document.querySelectorAll('.project-card');
+//
+//         cards.forEach(card => {
+//             const tags = card.getAttribute('data-tags') || '';
+//             if (skill === "all" || tags.includes(skill)) {
+//                 card.style.display = "block";
+//             } else {
+//                 card.style.display = "none";
+//             }
+//         });
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
     const bubbleContainer = document.createElement("div");
     bubbleContainer.setAttribute("id", "bubble-container");
