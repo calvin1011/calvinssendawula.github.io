@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const textElement = document.getElementById("typing-text");
     const words = [
-        "Full Stack Developer",
-        "AI Enthusiast",
-        "Open-Source Contributor",
-        "Software Engineer",
-        "Car Enthusiast",
-        "I love swimming",
-        "Watch Enthusiast"
+        "A Full Stack Developer",
+        "An AI Enthusiast",
+        "An Open-Source Contributor",
+        "A Software Engineer",
+        "A Car Enthusiast",
+        "A Swimmer",
+        "A Watch Enthusiast",
+        "A Chef"
     ];
 
     let wordIndex = 0;
