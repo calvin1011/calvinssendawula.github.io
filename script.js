@@ -235,3 +235,30 @@ if (menu && menuToggle) {
         link.addEventListener("click", closemenu);
     });
 }
+
+// ====== Hero Section Dots ======
+document.addEventListener("DOMContentLoaded", function () {
+    const heroBackground = document.getElementById("hero-background");
+
+    function createDot() {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+
+        // Random starting position
+        dot.style.left = Math.random() * window.innerWidth + "px";
+        dot.style.top = Math.random() * window.innerHeight + "px";
+
+        // Random animation duration
+        dot.style.animationDuration = Math.random() * 5 + 10 + "s";
+
+        heroBackground.appendChild(dot);
+
+        // Remove dot after animation
+        setTimeout(() => {
+            dot.remove();
+        }, 20000);
+    }
+
+    // Create dots every 500ms
+    setInterval(createDot, 500);
+});

@@ -46,6 +46,41 @@ html, body {
     text-align: center;
 }
 
+/* ===== HERO BACKGROUND (Particles Only for Header) ===== */
+#hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 255, 0, 0.4); /* Soft green glow */
+    border-radius: 50%;
+    animation: moveDots 20s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes moveDots {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(20px) scale(1.2);
+        opacity: 0;
+    }
+}
+
 /* ===== NAVIGATION BAR ===== */
 nav {
     display: flex;
