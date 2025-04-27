@@ -61,10 +61,15 @@ html, body {
     position: absolute;
     width: 6px;
     height: 6px;
-    background-color: rgba(0, 255, 0, 0.4); /* Soft green glow */
+    background-color: rgba(0, 255, 0, 0.4);
     border-radius: 50%;
-    animation: moveDots 20s linear infinite;
+    animation: moveDots 20s linear infinite, twinkle 3s ease-in-out infinite;
     opacity: 0.6;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
 }
 
 @keyframes moveDots {
