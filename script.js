@@ -309,3 +309,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+/* Github API calling to update project section synchronously"*/
+document.addEventListener("DOMContentLoaded", async function () {
+    const username = "calvin1011"; // <-- your GitHub username
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=1`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const repos = await response.json();
+
+        if (repos.length > 0) {
+            const latestRepo = repos[0];
+            const repoName = latestRepo.name;
+            const updatedAt = new Date(latestRepo.updated_at);
+            const today = new Date();
+            const diffTime = today - updatedAt;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+            // Update the elements
+            const projectDaysAgoElement = document.getElementById("project-days-ago");
+            const projectNameElement = document.getElementById("project-name");
+
+            projectNameElement.textContent = repoName;
+            projectDaysAgoElement.innerHTML = `<strong style="color: red;">${diffDays} days ago</strong>`;
+        }
+    } catch (error) {
+        console.error("Error fetching GitHub repos:", error);
+    }
+});
+
+
