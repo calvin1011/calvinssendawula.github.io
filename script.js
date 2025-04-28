@@ -203,11 +203,11 @@ const menuToggle = document.querySelector(".menu-toggle");
 const closeButton = document.querySelector("#sidemenu .fa-times");
 
 function openmenu() {
-    menu.style.display = "block";
+    menu.classList.add("active");
 }
 
 function closemenu() {
-    menu.style.display = "none";
+    menu.classList.remove("active");
 }
 
 if (closeButton) {

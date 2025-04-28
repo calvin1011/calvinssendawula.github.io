@@ -137,16 +137,22 @@ nav {
 
 /* Navigation Menu */
 #sidemenu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: black;
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start offscreen */
     width: 250px;
-    padding: 20px;
+    height: 100vh;
+    background: black;
+    padding: 60px 20px 20px;
     text-align: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     flex-direction: column;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    z-index: 1500;
+}
+#sidemenu.active {
+    right: 0;
 }
 
 /* Hamburger Menu - Always on Right */
