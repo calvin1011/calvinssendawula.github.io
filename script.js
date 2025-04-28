@@ -197,32 +197,25 @@ function closeAllExperience() {
     document.getElementById("overlay").classList.remove("active");
 }
 
-// Menu functionality
+// ========== MENU FUNCTIONALITY ==========
 const menu = document.getElementById("sidemenu");
 const menuToggle = document.querySelector(".menu-toggle");
 const closeButton = document.querySelector("#sidemenu .fa-times");
 
-if (closeButton) {  // Check if the close button exists before adding the event
+function openmenu() {
+    menu.style.display = "block";
+}
+
+function closemenu() {
+    menu.style.display = "none";
+}
+
+if (closeButton) {
     closeButton.addEventListener("click", closemenu);
 }
 
 if (menu && menuToggle) {
-    function openmenu() {
-        menu.style.display = "block";
-    }
-
-    function closemenu() {
-        menu.style.display = "none";
-    }
-
-    // Toggle menu when clicking the menu icon
-    menuToggle.addEventListener("click", function() {
-        if (menu.style.display === "block") {
-            closemenu();
-        } else {
-            openmenu();
-        }
-    });
+    menuToggle.addEventListener("click", openmenu);
 
     // Close menu when clicking outside
     document.addEventListener("click", function (event) {
