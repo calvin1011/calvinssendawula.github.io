@@ -287,6 +287,269 @@ nav {
     background: #333;
 }
 
+/* Academic section */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 80px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.sub-title {
+    font-size: 70px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.academic-subtext {
+    font-size: 18px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* Tab Navigation */
+.academic-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: #1d1d1d;
+    border: 2px solid #ff004f;
+    color: #ff004f;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #ff004f;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Academic Grid */
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.academic-card {
+    background: linear-gradient(135deg, #222 0%, #333 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.academic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff004f, #ff6b4f);
+}
+
+.academic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 0, 79, 0.2);
+    border-color: #ff004f;
+}
+
+.academic-card h3 {
+    color: #ff004f;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.academic-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.meta-tag {
+    background: #444;
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    border: 1px solid #666;
+}
+
+.course-tag {
+    background: #1a4f3a;
+    border-color: #2d8659;
+}
+
+.type-tag {
+    background: #4f1a1a;
+    border-color: #86292d;
+}
+
+.tech-tag {
+    background: #1a1a4f;
+    border-color: #29298f;
+}
+
+.academic-card p {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.academic-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.academic-link {
+    background: #ff004f;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid #ff004f;
+}
+
+.academic-link:hover {
+    background: transparent;
+    color: #ff004f;
+}
+
+.academic-link.secondary {
+    background: transparent;
+    color: #ff004f;
+    border: 2px solid #ff004f;
+}
+
+.academic-link.secondary:hover {
+    background: #ff004f;
+    color: white;
+}
+
+/* Research Papers Specific Styling */
+.research-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.research-card::before {
+    background: linear-gradient(90deg, #0f3460, #4f9cf9);
+}
+
+.research-card h3 {
+    color: #4f9cf9;
+}
+
+.research-card:hover {
+    box-shadow: 0 20px 40px rgba(79, 156, 249, 0.2);
+    border-color: #4f9cf9;
+}
+
+/* Achievements Specific Styling */
+.achievement-card {
+    background: linear-gradient(135deg, #2e1a1a 0%, #3e1616 100%);
+}
+
+.achievement-card::before {
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+}
+
+.achievement-card h3 {
+    color: #ffd700;
+}
+
+.achievement-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+}
+
+@media (max-width: 768px) {
+    .sub-title {
+        font-size: 50px;
+    }
+
+    .academic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-btn {
+        width: 200px;
+        text-align: center;
+    }
+}
+
 /* Bubble Container */
 #bubble-container {
     position: fixed;
