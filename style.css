@@ -733,7 +733,7 @@ body {
     color: white;
 }
 
-/* Project Container with Carousel */
+/*!* Project Container with Carousel *!
 .projects-carousel-container {
     position: relative;
     max-width: 1200px;
@@ -746,7 +746,7 @@ body {
     gap: 20px;
     transition: transform 0.5s ease;
     padding: 20px 0;
-}
+}*/
 
 /*!* Project Card *!
 .project-card {
@@ -824,7 +824,7 @@ body {
     background-color: darkred;
 }*/
 
-/* Carousel Navigation Arrows */
+/*!* Carousel Navigation Arrows *!
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -853,7 +853,7 @@ body {
 
 .carousel-next {
     right: 10px;
-}
+}*/
 
 /* View All Projects Button */
 .projects-footer {
@@ -883,7 +883,8 @@ footer{
     margin-top: 60px;
 }
 
-/* ===== MOBILE RESPONSIVENESS ===== */
+/*
+!* ===== MOBILE RESPONSIVENESS ===== *!
 @media screen and (max-width: 768px) {
     .nav-links{
         display: none;
@@ -933,4 +934,4 @@ footer{
     .view-all-button {
         width: 90%;
     }
-}
+}*/

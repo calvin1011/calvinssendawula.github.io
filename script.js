@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typeEffect();
 
-    // Project carousel functionality
-    initProjectCarousel();
+    /*// Project carousel functionality
+    initProjectCarousel();*/
 });
 
 // Smooth scrolling for navigation links
@@ -113,7 +113,7 @@ function showTab(tabName) {
     event.target.classList.add('active');
 }
 
-// Project carousel functionality
+/*// Project carousel functionality
 let currentIndex = 0;
 const itemsPerView = window.innerWidth < 768 ? 1 : 3;
 
@@ -168,7 +168,7 @@ function initProjectCarousel() {
             updateCarousel();
         }
     });
-}
+}*/
 
 document.addEventListener("DOMContentLoaded", function () {
     const bubbleContainer = document.createElement("div");
