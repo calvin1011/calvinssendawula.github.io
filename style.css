@@ -748,7 +748,7 @@ body {
     padding: 20px 0;
 }
 
-/* Project Card */
+/*!* Project Card *!
 .project-card {
     flex: 0 0 calc(33.333% - 20px);
     min-width: 300px;
@@ -822,7 +822,7 @@ body {
 
 .project-link:hover {
     background-color: darkred;
-}
+}*/
 
 /* Carousel Navigation Arrows */
 .carousel-arrow {
