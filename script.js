@@ -339,6 +339,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const updatedAt = new Date(latestRepo.updated_at);
             const today = new Date();
             const diffTime = today - updatedAt;
+            const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
             const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
             // Update the elements
@@ -346,7 +347,29 @@ document.addEventListener("DOMContentLoaded", async function () {
             const projectNameElement = document.getElementById("project-name");
 
             projectNameElement.innerHTML = `<a href="${repoUrl}" target="_blank" style="color: #ff004f; text-decoration: underline;">${repoName}</a>`;
-            projectDaysAgoElement.innerHTML = `<strong style="color: red;">${diffDays} days ago</strong>`;
+
+            // Determine what to display based on time elapsed
+            let timeDisplay;
+            if (diffHours < 24) {
+                // Less than 24 hours - show hours
+                timeDisplay = `<strong style="color: #00ff00;">${diffHours} hour${diffHours !== 1 ? 's' : ''} ago</strong>`;
+            } else if (diffDays < 7) {
+                // Less than 7 days - show days
+                timeDisplay = `<strong style="color: #00ff00;">${diffDays} day${diffDays !== 1 ? 's' : ''} ago</strong>`;
+            } else {
+                const options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                };
+                const formattedDate = updatedAt.toLocaleDateString('en-US', options);
+                timeDisplay = `<strong style="color: #00ff00;">${formattedDate}</strong>`;
+            }
+
+            projectDaysAgoElement.innerHTML = timeDisplay;
         }
     } catch (error) {
         console.error("Error fetching GitHub repos:", error);
