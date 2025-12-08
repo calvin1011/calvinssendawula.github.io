@@ -694,6 +694,14 @@ body {
     background: darkred;
 }
 
+.highlight-project a {
+    transition: color 0.3s ease;
+}
+
+.highlight-project a:hover {
+    color: #ff3366 !important;
+}
+
 /* ===== PROJECTS SECTION ===== */
 #projects {
     padding: 50px 0;

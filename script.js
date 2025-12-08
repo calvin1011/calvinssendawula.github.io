@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Github API calling to update project section synchronously"*/
 document.addEventListener("DOMContentLoaded", async function () {
-    const username = "calvin1011"; // <-- your GitHub username
+    const username = "calvin1011";
     const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=1`;
 
     try {
@@ -335,6 +335,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (repos.length > 0) {
             const latestRepo = repos[0];
             const repoName = latestRepo.name;
+            const repoUrl = latestRepo.html_url;
             const updatedAt = new Date(latestRepo.updated_at);
             const today = new Date();
             const diffTime = today - updatedAt;
@@ -344,7 +345,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const projectDaysAgoElement = document.getElementById("project-days-ago");
             const projectNameElement = document.getElementById("project-name");
 
-            projectNameElement.textContent = repoName;
+            projectNameElement.innerHTML = `<a href="${repoUrl}" target="_blank" style="color: #ff004f; text-decoration: underline;">${repoName}</a>`;
             projectDaysAgoElement.innerHTML = `<strong style="color: red;">${diffDays} days ago</strong>`;
         }
     } catch (error) {
